@@ -14,5 +14,12 @@
   "dependencies": {
     "vitepress": "1.0.0-alpha.43",
     "vue": "^3.2.45"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@algolia/client-search"
+      ]
+    }
   }
 }
