@@ -12,10 +12,9 @@ export default defineConfig({
 
   markdown: {
     headers: {
-      level: [0, 0]
-    }
+      level: [0, 0],
+    },
   },
-
   themeConfig: {
     // https://zhuanlan.zhihu.com/p/568538285
     algolia: {
@@ -26,14 +25,14 @@ export default defineConfig({
       translations: {
         button: {
           buttonText: '搜索文档',
-          buttonAriaLabel: '搜索文档'
+          buttonAriaLabel: '搜索文档',
         },
         modal: {
           searchBox: {
             resetButtonTitle: '清除查询条件',
             resetButtonAriaLabel: '清除查询条件',
             cancelButtonText: '取消',
-            cancelButtonAriaLabel: '取消'
+            cancelButtonAriaLabel: '取消',
           },
           startScreen: {
             recentSearchesTitle: '搜索历史',
@@ -41,69 +40,69 @@ export default defineConfig({
             saveRecentSearchButtonTitle: '保存至搜索历史',
             removeRecentSearchButtonTitle: '从搜索历史中移除',
             favoriteSearchesTitle: '收藏',
-            removeFavoriteSearchButtonTitle: '从收藏中移除'
+            removeFavoriteSearchButtonTitle: '从收藏中移除',
           },
           errorScreen: {
             titleText: '无法获取结果',
-            helpText: '你可能需要检查你的网络连接'
+            helpText: '你可能需要检查你的网络连接',
           },
           noResultsScreen: {
             noResultsText: '无法找到相关结果',
             suggestedQueryText: '你可以尝试查询',
             reportMissingResultsText: '你认为该查询应该有结果？',
-            reportMissingResultsLinkText: '点击反馈'
+            reportMissingResultsLinkText: '点击反馈',
           },
           footer: {
             selectText: '选择',
             navigateText: '切换',
             closeText: '关闭',
-            searchByText: '搜索提供者'
-          }
-        }
-      }
+            searchByText: '搜索提供者',
+          },
+        },
+      },
     },
     nav: nav(),
 
     sidebar: {
       '/web/': sidebarWeb(),
       '/collect': sidebarCollect(),
-      '/beibei': sidebarBeibei(),
+      '/other': sidebarOther(),
     },
 
     editLink: {
       pattern: 'https://github.com/HuLingshare/docs',
-      text: 'Edit this page on GitHub'
+      text: 'Edit this page on GitHub',
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/vuejs/vitepress' },
     ],
 
     footer: {
       message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2023-present HuLing'
-    }
-  }
+      copyright: 'Copyright © 2023-present HuLing',
+    },
+  },
 })
 
 function nav() {
   return [
     { text: 'web文档', link: '/web/css', activeMatch: '/web/' },
     { text: '收藏', link: '/collect/collect', activeMatch: '/collect/' },
-    { text: 'BBDuoRua', link: '/beibei/index', activeMatch: '/beibei/' },
+    { text: '其他', link: '/other/fastButton', activeMatch: '/other/' },
     {
       text: '0.0.1',
       items: [
         {
           text: 'github',
-          link: 'https://github.com/HuLingshare/docs.git'
+          link: 'https://github.com/HuLingshare/docs.git',
         },
         {
           text: '百度',
-          link: 'https://www.baidu.com/'
+          link: 'https://www.baidu.com/',
         },
-      ]
-    }
+      ],
+    },
   ]
 }
 
@@ -112,9 +111,7 @@ function sidebarWeb() {
     {
       text: 'Git',
       collapsible: true,
-      items: [
-        { text: 'git', link: '/web/git' }
-      ]
+      items: [{ text: 'git', link: '/web/git' }],
     },
     {
       text: 'CSS',
@@ -122,14 +119,20 @@ function sidebarWeb() {
       items: [
         { text: '开始 Tailwind CSS 之旅', link: '/web/Tailwind' },
         { text: 'Less', link: '/web/Less' },
-      ]
+      ],
     },
     {
       text: 'Vue',
       collapsible: true,
+      items: [{ text: 'Vue3', link: '/web/Vue3' }],
+    },
+    {
+      text: 'Javascript',
+      collapsible: true,
       items: [
-        { text: 'Vue3', link: '/web/Vue3' }
-      ]
+        { text: 'Javascript', link: '/web/Javascript' },
+        { text: '常用方法', link: '/web/Javascript-funs' },
+      ],
     },
     {
       text: 'TypeScript',
@@ -137,9 +140,9 @@ function sidebarWeb() {
       items: [
         {
           text: 'TypeScript',
-          link: '/web/TypeScript'
-        }
-      ]
+          link: '/web/TypeScript',
+        },
+      ],
     },
     {
       text: '单元测试',
@@ -147,9 +150,9 @@ function sidebarWeb() {
       items: [
         {
           text: 'Jest',
-          link: '/web/Jest'
-        }
-      ]
+          link: '/web/Jest',
+        },
+      ],
     },
     {
       text: '项目构建',
@@ -157,9 +160,9 @@ function sidebarWeb() {
       items: [
         {
           text: 'Vite',
-          link: '/web/Vite'
-        }
-      ]
+          link: '/web/Vite',
+        },
+      ],
     },
     {
       text: '项目规范',
@@ -167,9 +170,9 @@ function sidebarWeb() {
       items: [
         {
           text: 'Husky',
-          link: '/web/Husky'
-        }
-      ]
+          link: '/web/Husky',
+        },
+      ],
     },
   ]
 }
@@ -182,23 +185,27 @@ function sidebarCollect() {
       items: [
         {
           text: '收藏地址',
-          link: '/collect/collect'
-        }
-      ]
-    }
+          link: '/collect/collect',
+        },
+        {
+          text: 'B站的弹幕不遮挡人物效果',
+          link: '/collect/videoDemo',
+        },
+      ],
+    },
   ]
 }
-function sidebarBeibei() {
+function sidebarOther() {
   return [
     {
-      text: '贝贝',
+      text: '其他',
       collapsible: true,
       items: [
         {
-          text: '贝贝',
-          link: '/beibei/index'
-        }
-      ]
-    }
+          text: '快捷键相关',
+          link: '/other/fastButton',
+        },
+      ],
+    },
   ]
 }
